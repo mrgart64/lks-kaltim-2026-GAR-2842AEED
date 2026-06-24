@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Aws\LexRuntimeService\LexRuntimeServiceClient;
+use Aws\LexRuntimeV2\LexRuntimeV2Client;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -84,7 +84,7 @@ class ChatbotController extends Controller
         }
 
         try {
-            $client = new LexRuntimeServiceClient([
+            $client = new LexRuntimeV2Client([
                 'version' => 'latest',
                 'region' => env('AWS_DEFAULT_REGION', 'ap-southeast-1'),
             ]);
@@ -92,7 +92,7 @@ class ChatbotController extends Controller
             $result = $client->recognizeText([
                 'botId' => $botId,
                 'botAliasId' => $aliasId,
-                'localeId' => 'id_ID',
+                'localeId' => 'en_US',
                 'sessionId' => $sessionId,
                 'text' => $message,
             ]);
