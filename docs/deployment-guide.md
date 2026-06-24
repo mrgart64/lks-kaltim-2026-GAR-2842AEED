@@ -98,10 +98,10 @@ db_username  = "kaltim_admin"
 db_password  = "K4lt1m#Secure2026!"
 db_name      = "kaltim_smart_platform"
 
-s3_bucket_name = "kaltim-uploads-gar-2842aeed-2026"
+s3_bucket_name = "kaltim-uploads-[kode-peserta]-2026"
 ```
 
-> Ganti `gar-2842aeed-2026` dengan kode tim kamu agar nama bucket unik di seluruh AWS.
+> Ganti `[kode-peserta]` dengan kode tim kamu agar nama bucket unik di seluruh AWS.
 
 ### Langkah 2 — Jalankan Terraform
 
@@ -231,7 +231,7 @@ docker compose version
 ### Langkah 3 — Clone Repository
 
 ```bash
-git clone https://github.com/[username]/[nama-repo].git /opt/kaltim-app
+git clone https://github.com/mrgart64/lks-kaltim-2026-GAR-2842AEED.git /opt/kaltim-app
 cd /opt/kaltim-app
 ```
 
@@ -340,33 +340,48 @@ Harus tampil **All Systems Operational** dengan database, cache, dan storage OK.
 
 ## 6. Setup Amazon Lex (Chatbot)
 
-> Bot dan semua intent sudah dibuat otomatis oleh Terraform. Yang perlu dilakukan manual: **Build** dan **buat alias**.
+> Bot dan semua intent sudah dibuat otomatis oleh Terraform. Yang perlu dilakukan manual: **Build locale → buat versi baru → buat alias**.
 
-### Langkah 1 — Build Bot
+> **Penting**: Jangan pakai versi 1 (yang dibuat Terraform) karena locale-nya belum Built saat versi itu dibuat. Kamu harus build dulu, lalu buat versi baru.
+
+### Langkah 1 — Build Bot Locale
 
 1. Buka **AWS Console → Amazon Lex → Bots**
 2. Klik bot **kaltim-smart-platform-chatbot**
-3. Pilih language **English (en_US)** — bot menggunakan locale ini karena `id_ID` tidak mendukung custom intent
-4. Klik tombol **Build** → tunggu ~2 menit hingga status **Built**
+3. Pilih language **English (en_US)** di panel kiri
+4. Klik tombol **Build** → tunggu ~2 menit hingga status berubah jadi **Built**
 
-### Langkah 2 — Buat Alias
+### Langkah 2 — Buat Bot Version Baru
 
-1. Di halaman bot, klik **Deployments → Aliases → Create alias**
+Setelah Build selesai, buat versi baru dari DRAFT:
+
+1. Di halaman bot, klik **Bot versions** di panel kiri
+2. Klik **Create version**
+3. Pastikan **en_US** locale dicentang → klik **Create**
+4. Tunggu hingga versi baru muncul (misal: Version 2) dengan status **Created**
+
+### Langkah 3 — Buat Alias
+
+1. Klik **Deployments → Aliases → Create alias**
 2. Alias name: `prod`
-3. Bot version: pilih versi dari `lex_bot_version` (terraform output) → **Create**
+3. Bot version: pilih **versi yang baru dibuat** di Langkah 2 (bukan Version 1) → **Create**
+4. Setelah alias dibuat, klik alias `prod`
+5. Di bagian **Languages**, pastikan **English (en_US)** sudah enabled. Jika belum, klik **Edit** lalu enable.
 
-### Langkah 3 — Ambil Alias ID
+### Langkah 4 — Ambil Alias ID dan Bot ID
 
-1. Klik alias `prod` yang baru dibuat
-2. Catat **Alias ID** (format: `XXXXXXXXXX`)
+1. Catat **Alias ID** dari halaman alias `prod` (format: `XXXXXXXXXX`)
+2. Catat **Bot ID** dari halaman bot utama (format: `XXXXXXXXXX`, ada di detail bot)
 
-### Langkah 4 — Update `.env` di EC2
+### Langkah 5 — Update `.env` di EC2
 
 Kembali ke Session Manager, lalu:
 
 ```bash
 nano /opt/kaltim-app/docker/.env
-# Isi baris AWS_LEX_BOT_ALIAS_ID dengan Alias ID dari langkah di atas
+# Isi dua baris ini:
+# AWS_LEX_BOT_ID=<Bot ID dari Langkah 4>
+# AWS_LEX_BOT_ALIAS_ID=<Alias ID dari Langkah 4>
 ```
 
 Restart app container:
@@ -375,12 +390,11 @@ Restart app container:
 docker compose -f /opt/kaltim-app/docker/docker-compose.yml up -d --force-recreate app
 ```
 
-Test chatbot:
+Test chatbot (harus ada reply dari Lex, bukan fallback rule-based):
 ```bash
 curl -X POST http://<alb_dns_name>/api/chatbot \
   -H "Content-Type: application/json" \
   -d '{"message": "cara buat KTP"}'
-# Harus ada reply dari Lex, bukan fallback
 ```
 
 ---
