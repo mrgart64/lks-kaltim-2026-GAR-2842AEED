@@ -49,8 +49,8 @@ aws sts get-caller-identity
 ### Langkah 3 — Clone Repository
 
 ```bash
-git clone https://github.com/mrgart64/lks-kaltim-2026-GAR-2842AEED.git
-cd lks-kaltim-2026-GAR-2842AEED
+git clone https://github.com/[username]/[nama-repo].git
+cd [nama-repo]
 ```
 
 ---
@@ -78,7 +78,7 @@ Terraform akan membuat semua infrastruktur AWS yang dibutuhkan: VPC, RDS, Redis,
 Di CloudShell, masuk ke folder terraform dari repo yang sudah di-clone:
 
 ```bash
-cd ~/lks-kaltim-2026-GAR-2842AEED/terraform
+cd ~/[nama-repo]/terraform
 ```
 
 Buat file `terraform.tfvars` (sudah ada di `.gitignore`, tidak akan ter-commit):
@@ -98,10 +98,10 @@ db_username  = "kaltim_admin"
 db_password  = "K4lt1m#Secure2026!"
 db_name      = "kaltim_smart_platform"
 
-s3_bucket_name = "kaltim-uploads-gar-2842aeed-2026"
+s3_bucket_name = "kaltim-uploads-[kode-peserta]-2026"
 ```
 
-> Ganti `gar-2842aeed-2026` dengan kode tim kamu agar nama bucket unik di seluruh AWS.
+> Ganti `[kode-peserta]` dengan kode tim kamu agar nama bucket unik di seluruh AWS.
 
 ### Langkah 2 — Jalankan Terraform
 

@@ -2,8 +2,8 @@
 
 LKS Cloud Computing 2026 - Provinsi Kalimantan Timur
 
-**Peserta:** Gabriel Ado Ramos Tukan
-**Kode Peserta:** GAR-2842AEED
+**Peserta:** [Nama Peserta]
+**Kode Peserta:** [Kode Peserta]
 
 ## Deskripsi
 
@@ -44,8 +44,8 @@ Internet → ALB (Public Subnet) → EC2 App (Private Subnet) → RDS + ElastiCa
 ### Dengan Docker (Recommended)
 
 ```bash
-git clone https://github.com/mrgart64/lks-kaltim-2026-GAR-2842AEED.git
-cd lks-kaltim-2026-GAR-2842AEED
+git clone https://github.com/[username]/lks-kaltim-2026-[kode-peserta].git
+cd lks-kaltim-2026-[kode-peserta]
 
 # Generate key
 php artisan key:generate --show   # copy output
