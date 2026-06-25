@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "27256683-bc51-440d-a94b-057ea8e22598",
+		"name": "LKS2026",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "56159470",
+		"_collection_link": "https://gabrieladoramostukan-316030.postman.co/workspace/Gabriel-Ado-Ramos-Tukan's-Works~761da9a0-63a0-4f89-8163-94ef9d763bba/collection/56159470-27256683-bc51-440d-a94b-057ea8e22598?action=share&source=collection_link&creator=56159470"
+	},
+	"item": [
+		{
+			"name": "Login Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"admin@kaltim.go.id\", \"password\": \"password\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/auth/login",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Warga",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"budi@email.com\", \"password\": \"password\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"kaltim-smart-platform-alb-1585642066",
+						"ap-southeast-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daftar Layanan (publik, tanpa token)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"email\": \"admin@kaltim.go.id\", \"password\": \"password\" }"
+				},
+				"url": {
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/services",
+					"protocol": "http",
+					"host": [
+						"kaltim-smart-platform-alb-1585642066",
+						"ap-southeast-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ajukan Layanan (sebagai warga)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1MTI1LCJleHAiOjE3ODIzNTg3MjUsIm5iZiI6MTc4MjM1NTEyNSwianRpIjoidmdnWW1mNXFDUjNzMTViTCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNpdGl6ZW4ifQ.T1pmnleVUW0BUB2F71KAebM375qbdFu6nHz1d_d2rZ0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"service_type_id\": 1, \"description\": \"Pengajuan test\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/services/request",
+					"protocol": "http",
+					"host": [
+						"kaltim-smart-platform-alb-1585642066",
+						"ap-southeast-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"services",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status (sebagai admin)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1MDQ2LCJleHAiOjE3ODIzNTg2NDYsIm5iZiI6MTc4MjM1NTA0NiwianRpIjoiZU45S1c1WUpPWGhYT2luQyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.7jSiRTYzzg_nLXcka-9ai4F3OB7D2I_AHWsjT0iPpYw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"status\": \"processing\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/services/request/1/status",
+					"protocol": "http",
+					"host": [
+						"kaltim-smart-platform-alb-1585642066",
+						"ap-southeast-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"services",
+						"request",
+						"1",
+						"status"
+					],
+					"query": [
+						{
+							"key": "Auth",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cek Notifikasi Warga (harus ada notif baru)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1ODc2LCJleHAiOjE3ODIzNTk0NzYsIm5iZiI6MTc4MjM1NTg3NiwianRpIjoiV2V5ZjhFeURkS2x5U2l5bSIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNpdGl6ZW4ifQ._qrmFIVqq-TMtFC2p5MkW3AISqpXkILihivKkS7zK3M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/notifications",
+					"protocol": "http",
+					"host": [
+						"kaltim-smart-platform-alb-1585642066",
+						"ap-southeast-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buat Laporan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1ODc2LCJleHAiOjE3ODIzNTk0NzYsIm5iZiI6MTc4MjM1NTg3NiwianRpIjoiV2V5ZjhFeURkS2x5U2l5bSIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNpdGl6ZW4ifQ._qrmFIVqq-TMtFC2p5MkW3AISqpXkILihivKkS7zK3M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": \"infrastructure\",\n  \"title\": \"Jalan Berlubang Test\",\n  \"description\": \"Test laporan jalan berlubang\",\n  \"location\": \"Jl. Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/reports",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lihat Laporan (admin — harus bisa lihat semua)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU2Mzc4LCJleHAiOjE3ODIzNTk5NzgsIm5iZiI6MTc4MjM1NjM3OCwianRpIjoiMzB4aG1XNjJDVGJJY0lFcCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.pGbZ8FBUV8HzuHeMf7VVEh0CDSpJO5HZ41bP8NLo-Qs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/reports",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistik",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU2Mzc4LCJleHAiOjE3ODIzNTk5NzgsIm5iZiI6MTc4MjM1NjM3OCwianRpIjoiMzB4aG1XNjJDVGJJY0lFcCIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.pGbZ8FBUV8HzuHeMf7VVEh0CDSpJO5HZ41bP8NLo-Qs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/dashboard/stats",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Warga akses admin → harus 403",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1ODc2LCJleHAiOjE3ODIzNTk0NzYsIm5iZiI6MTc4MjM1NTg3NiwianRpIjoiV2V5ZjhFeURkS2x5U2l5bSIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNpdGl6ZW4ifQ._qrmFIVqq-TMtFC2p5MkW3AISqpXkILihivKkS7zK3M",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/dashboard/stats",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"dashboard",
+						"stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "S3 Block Public Access",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kaltim-uploads-gar-2842aeed-2026.s3.ap-southeast-1.amazonaws.com/",
+					"protocol": "https",
+					"host": [
+						"kaltim-uploads-gar-2842aeed-2026",
+						"s3",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Akses via CloudFront (harus bisa)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://d3ggvw897lgdxc.cloudfront.net/reports/iTMFbx1GyDTykgoiNEOLuxbdUyXa8im5mK6xVT8n.png",
+					"protocol": "https",
+					"host": [
+						"d3ggvw897lgdxc",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"reports",
+						"iTMFbx1GyDTykgoiNEOLuxbdUyXa8im5mK6xVT8n.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/health",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Chatbot",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU1MTI1LCJleHAiOjE3ODIzNTg3MjUsIm5iZiI6MTc4MjM1NTEyNSwianRpIjoidmdnWW1mNXFDUjNzMTViTCIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImNpdGl6ZW4ifQ.T1pmnleVUW0BUB2F71KAebM375qbdFu6nHz1d_d2rZ0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/reports?per_page=2&page=1",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"reports"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU4MDI2LCJleHAiOjE3ODIzNjE2MjYsIm5iZiI6MTc4MjM1ODAyNiwianRpIjoiR2M4MmRmT01SUVRNR01KbyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.GF8ySfDydAP0cTL-EVJoG2HkU1QOR6lhrcn8eUlQaJw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/auth/profile",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"auth",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2FsdGltLXNtYXJ0LXBsYXRmb3JtLWFsYi0xNTg1NjQyMDY2LmFwLXNvdXRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzgyMzU4MDI2LCJleHAiOjE3ODIzNjE2MjYsIm5iZiI6MTc4MjM1ODAyNiwianRpIjoiR2M4MmRmT01SUVRNR01KbyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3Iiwicm9sZSI6ImFkbWluIn0.GF8ySfDydAP0cTL-EVJoG2HkU1QOR6lhrcn8eUlQaJw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}api/auth/logout",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
