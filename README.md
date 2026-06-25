@@ -5,6 +5,12 @@ LKS Cloud Computing 2026 - Provinsi Kalimantan Timur
 **Peserta:** Gabriel Ado Ramos Tukan
 **Kode Peserta:** GAR-2842AEED
 
+![ALB URL: http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/](http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/)
+![Route 53 URL: http://kaltimsmart.gabriel-smkn7.click](http://kaltimsmart.gabriel-smkn7smr.click/)
+![Postman Collection](docs/Kaltim-Smart-Platform.postman_collection.json)
+![Screenshot CloudWatch Dashboard](docs/screenshot_cloudwatch_dashboard.png)
+![Cloudtrail Presigned URL](https://aws-cloudtrail-logs-492976517400-aaddee1c.s3.ap-southeast-1.amazonaws.com/AWSLogs/492976517400/CloudTrail/ap-southeast-1/2026/05/25/?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAXFR5QWEMPYCNHN66%2F20260625%2Fap-southeast-1%2Fs3%2Faws4_request&X-Amz-Date=20260625T065000Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH8aDmFwLXNvdXRoZWFzdC0xIkgwRgIhAOn1sJ6NBRXd3OL47SydBuVj6TgiFuLD7o27Z%2BLWMpIOAiEA%2Bz6eMZY8DhMxV2EEE1Wg%2FS6PksOEdAEACpCcG9Qups0q5AIISBACGgw0OTI5NzY1MTc0MDAiDBYdwM%2BXM4lS4jyJhSrBAtTVMnzMhZH1MQtuAeyEuA4atbZiaBTjprXfgoxrpLOy4N5J9YcNKqlzB5%2FHe4%2FNXdRYVihdaW%2FdcHd8a03h8xpVAVQMbu5MmdoatuAYYcCaRxBxl%2BHr2qNSzIo3KvVrvyhHltjY4KotigFEREfLS2MMRkO8CskzkMcFM215E5f4%2BBofKWBhQXjF93GKqix6LKEwM6Dw1ZUpNCrB0HPuK6yQp3H9tmFoBbpa1XGqA7ga4wzSCDVvSyXSWus8%2BXg5e4MLDDcwGPLzggbIyp4UWrLtpIaJmpOs9O2xpbhg09fb5jzvPhX4m5ncpqLntsn9LI%2BOGSMq2jM2JO82B7DZ%2FLbrgobdawIpQCXOQpNZx8QfDZVrsaxkzoDtiYEV5Qy2c2fcSDpsHlxLDCQ4%2BpfAPJ6pE4dQcVQKqdwHoO%2FfHaOe0TDv5%2FHRBjqsAgUJ0r21BYa02JrTa5ncnrVlHn%2F9IPQ61q%2BMo84m4iViIuVNMvWhkz1Y3T68WZl3EgeDo2Ffuui%2BreG7Yqt4F9H5ncTSqiMX9LzMO1TSr31Vxm1wG9YkLSMXIDrluvKvuBnlztoUWuke3GKjnn3gG8nS0Inezo8oOYObhJ8AWf5cdkqnTydUkPe%2BeD8UPuviFeN3BdFh7Wzp9YXlQzqX9XbhMPYCtkmyASkPnYVd4lyj%2F6V3HSz%2BjjXv0lKFYYasWofIA9PLO0PGcnCbV7BQtJ4sMHOyLYgu068LdByGnZSc8KIecMeTZD2C1Lx8QaXgxvY41FCP%2B3rXa3Oj%2FL1B9%2BpPMjsbdkdmAzHhh2Z2xGguibvjlxlvo9Qg1LFbQ96GGnPamCDo%2BmacsTUBUQ%3D%3D&X-Amz-Signature=67eb7e34c1b8348ee50f70f9d327ff65eff03f8102d8e85142fd8e5b40ee5e23)
+
 ## Deskripsi
 
 Platform layanan publik digital berbasis cloud untuk Pemerintah Provinsi Kalimantan Timur. Aplikasi ini menyediakan REST API dan web interface untuk:
