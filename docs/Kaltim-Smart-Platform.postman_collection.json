@@ -22,9 +22,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}api/auth/login",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/auth/login",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"auth",
@@ -237,9 +237,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}/api/reports",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com//api/reports",
 					"host": [
-						"{{base_url}}"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/"
 					],
 					"path": [
 						"api",
@@ -276,9 +276,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{base_url}}api/reports",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/reports",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"reports"
@@ -299,9 +299,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}api/dashboard/stats",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/dashboard/stats",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"dashboard",
@@ -323,9 +323,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}api/dashboard/stats",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/dashboard/stats",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"dashboard",
@@ -384,9 +384,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{base_url}}api/health",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/health",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"health"
@@ -407,9 +407,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}api/reports?per_page=2&page=1",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/reports?per_page=2&page=1",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"reports"
@@ -440,9 +440,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}api/auth/profile",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/auth/profile",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"auth",
@@ -464,9 +464,9 @@
 					}
 				],
 				"url": {
-					"raw": "{{base_url}}api/auth/logout",
+					"raw": "http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api/auth/logout",
 					"host": [
-						"{{base_url}}api"
+						"http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/api"
 					],
 					"path": [
 						"auth",
