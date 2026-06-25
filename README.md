@@ -5,7 +5,7 @@ LKS Cloud Computing 2026 - Provinsi Kalimantan Timur
 **Peserta:** Gabriel Ado Ramos Tukan
 **Kode Peserta:** GAR-2842AEED
 
-![ALB URL: http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/](http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/)
+[ALB URL: http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/](http://kaltim-smart-platform-alb-1585642066.ap-southeast-1.elb.amazonaws.com/)
 
 ![Route 53 URL: http://kaltimsmart.gabriel-smkn7.click](http://kaltimsmart.gabriel-smkn7smr.click/)
 
